@@ -16,6 +16,8 @@ spec:
       - name: myapp-container
         image: zhujq/free5gc-planec-s3
         imagePullPolicy: Always
+      nodeSelector:
+         disktype: 5G
         command: ["/bin/sh"]
         args: ["-c", "./bin/smf"]
         volumeMounts:
