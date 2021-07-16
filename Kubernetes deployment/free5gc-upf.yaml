@@ -17,6 +17,8 @@ spec:
         image: registry.gitlab.com/infinitydon/registry/free5gc-upf:v3.0.1
         securityContext:
           privileged: true
+      nodeSelector:
+        disktype: 5G2
         command: ["/bin/sh"]
         args: ["-c", "free5gc/src/upf/build/bin/free5gc-upfd -f free5gc/src/upf/build/config/upfcfg.yaml && ip addr add 60.60.0.100/24 dev lo"]
         volumeMounts:
