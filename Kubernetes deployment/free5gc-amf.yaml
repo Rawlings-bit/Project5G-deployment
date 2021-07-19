@@ -16,8 +16,6 @@ spec:
       - name: myapp-container
         image: registry.gitlab.com/infinitydon/registry/free5gc-cpf:v3.0.1
         imagePullPolicy: Always
-      nodeSelector:
-         disktype: 5G
         command: ["/bin/sh"]
         args: ["-c", "./bin/amf"]
         volumeMounts:
