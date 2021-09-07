@@ -18,10 +18,6 @@ spec:
         imagePullPolicy: Always
         command: ["/bin/sh"]
         args: ["-c", "./bin/amf"]
-        ports:
-          - containerPort: 30102
-            name: myapp-container
-            protocol: SCTP
         volumeMounts:
         - name: amfcfg
           mountPath: /go/src/free5gc/config/amfcfg.conf
@@ -34,10 +30,6 @@ spec:
         image: sdnvortex/network-controller:v0.4.9
         command: ["/go/bin/client"]
         args: ["-s=unix:///tmp/vortex.sock", "-b=br1", "-n=eth1", "-i=192.168.2.2/24", "-g=192.168.2.254"]
-        ports:
-          - containerPort: 30102
-            name: init-network-client
-            protocol: SCTP
         env:
         - name: POD_NAME
           valueFrom:
