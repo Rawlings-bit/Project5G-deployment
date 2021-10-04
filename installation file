@@ -17,6 +17,13 @@ Enable IP tables
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 
+
+#VORTEX INSTALLATION 
+git clone https://github.com/linkernetworks/vortex-installer.git
+cd vortex-installer && ./scripts/deploy-in-vagrant
+sudo apt-get install make
+make ansible
+
 #Install kubectl:
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
 chmod +x ./kubectl
