@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: free5gc-amf
-  replicas: 4
+  replicas: 2
   template:
     metadata:
       labels:
