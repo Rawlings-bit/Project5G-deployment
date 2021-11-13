@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: free5gc-nrf
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
